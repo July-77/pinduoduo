@@ -2,12 +2,15 @@ ul {
   padding: 0;
   margin: 0;
   display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   justify-content: space-between;
 }
 ul li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   margin: 0 5px;
   padding: 0;
   white-space: nowrap;
@@ -18,12 +21,15 @@ a {
 ::-webkit-scrollbar {
   display: none;
 }
-.active {
-  color: red;
-}
+
 .indicator {
-  background-color: brown;
   height: 2px;
   width: 2rem;
-  margin-top: 2px ;
+  margin-top: 2px;
+}
+.even {
+  font-weight: 900;
+}
+.odd {
+  font-weight: 100;
 }
