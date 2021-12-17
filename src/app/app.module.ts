@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "./shared/shared.module";
 import {AppRoutingModule} from "./app-routing.module";
-import {HomeModule} from "./home";
-import {HttpClientModule} from "@angular/common/http";
+import {HomeModule, NotificationInterceptor, ParamInterceptor} from "./home";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -21,7 +21,16 @@ import {HttpClientModule} from "@angular/common/http";
     HomeModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: ParamInterceptor,
+    multi: true
+  },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: NotificationInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

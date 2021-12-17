@@ -8,7 +8,6 @@ import { HomeDetailComponent } from './components';
 import { HomeGrandComponent } from './components';
 import { HomeAuxComponent } from './components';
 import {ParentComponent} from "./components";
-import {ChildComponent} from "./components";
 
 
 @NgModule({
@@ -18,7 +17,6 @@ import {ChildComponent} from "./components";
     HomeGrandComponent,
     HomeAuxComponent,
     ParentComponent,
-    ChildComponent
   ],
   imports: [
     SharedModule,

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+// @ts-ignore
+
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+
 
 @Component({
   selector: 'app-parent',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }
