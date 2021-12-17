@@ -4,19 +4,7 @@ import {HomeContainerComponent, HomeDetailComponent} from "./home";
 
 
 const routes: Routes = [
-  {path:'home', component: HomeContainerComponent,
-  children: [
-    {
-    path: '',
-    redirectTo: 'hot',
-    pathMatch: 'full'
-    },
-    {
-    path: ':tablink',
-    component: HomeDetailComponent
-    }
-
-]},
+  {path:'', redirectTo: 'home' , pathMatch: 'full'},
 ];
 
 @NgModule({

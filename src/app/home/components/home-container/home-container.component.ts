@@ -19,7 +19,8 @@ export class HomeContainerComponent implements OnInit {
   title: any;
 
   ngOnInit(): void {
-    this.topMenus = this.service.getTabs()
+    this.service.getTabs().subscribe(tabs=>
+      this.topMenus = tabs)
   }
 
 

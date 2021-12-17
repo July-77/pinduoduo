@@ -23,8 +23,14 @@ export class HomeDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params =>
     this.selectedTablink = params.get('tablink'))
-    this.imageSliders = this.service.getBanners();
-    this.channels = this.service.getchannels();
+
+    this.service.getBanners().subscribe(banners =>{
+      this.imageSliders = banners;
+    });
+
+    this.service.getchannels().subscribe(channels =>{
+      this.channels = channels;
+    });
 
 
   }
