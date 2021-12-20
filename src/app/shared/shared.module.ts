@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import {FormsModule} from "@angular/forms";
 import {HorizontalGridComponent, ImageSliderComponent, ScrollableTabComponent} from "./components";
 import {GridItemDirective} from "./directives";
-import {GridItemImageDirective} from "./directives/grid-item-image.directive";
-import {GridItemTitleDirective} from "./directives/grid-item-title.directive";
+import {GridItemImageDirective} from "./directives";
+import {GridItemTitleDirective} from "./directives";
+import { CountDownComponent } from './components';
 
 
 
@@ -15,7 +16,8 @@ import {GridItemTitleDirective} from "./directives/grid-item-title.directive";
     HorizontalGridComponent,
     GridItemDirective,
     GridItemImageDirective,
-    GridItemTitleDirective
+    GridItemTitleDirective,
+    CountDownComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import {GridItemTitleDirective} from "./directives/grid-item-title.directive";
     HorizontalGridComponent,
     GridItemDirective,
     GridItemImageDirective,
-    GridItemTitleDirective
+    GridItemTitleDirective,
+    CountDownComponent
   ]
 })
 export class SharedModule { }
