@@ -1,5 +1,5 @@
 
-<div *ngIf="selectedTablink === 'hot'; else other">
+<div *ngIf="(selectedTabLink$ | async) === 'hot'; else other">
   <app-image-slider [sliders]="imageSliders"></app-image-slider>
   <app-horizontal-grid>
   <span appGridItem *ngFor="let item of channels">

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Channel, ImageSlider} from "../../../shared/components";
 import {ActivatedRoute} from "@angular/router";
 import {HomeService} from "../../services";
+import {filter, map} from "rxjs/operators";
+import { Observable, Subscription} from "rxjs";
 
 
 @Component({
@@ -14,15 +16,24 @@ export class HomeDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private service: HomeService) { }
 
-  selectedTablink: any;
+  selectedTabLink$?: Observable<string | null>;
 
   imageSliders: ImageSlider[] = [];
 
-  channels: Channel[] = []
+  channels: Channel[] = [];
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params =>
-    this.selectedTablink = params.get('tablink'))
+
+    this.selectedTabLink$ = this.route.paramMap.pipe(
+      filter(params => params.has('tabLink')),
+      map(params => params.get('tabLink'))
+    );
+
+    console.log('this.selectedTabLink$===' , this.selectedTabLink$)
+
+    this.route.queryParamMap.subscribe(params => {
+      console.log('查询参数', params)
+    });
 
     this.service.getBanners().subscribe(banners =>{
       this.imageSliders = banners;
