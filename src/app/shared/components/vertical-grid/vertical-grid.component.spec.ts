@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeGrandComponent } from './home-grand.component';
+import { VerticalGridComponent } from './vertical-grid.component';
 
-describe('HomeGrandComponent', () => {
-  let component: HomeGrandComponent;
-  let fixture: ComponentFixture<HomeGrandComponent>;
+describe('VerticalGridComponent', () => {
+  let component: VerticalGridComponent;
+  let fixture: ComponentFixture<VerticalGridComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeGrandComponent ]
+      declarations: [ VerticalGridComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeGrandComponent);
+    fixture = TestBed.createComponent(VerticalGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

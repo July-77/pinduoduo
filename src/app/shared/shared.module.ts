@@ -6,6 +6,7 @@ import {GridItemDirective} from "./directives";
 import {GridItemImageDirective} from "./directives";
 import {GridItemTitleDirective} from "./directives";
 import { CountDownComponent } from './components';
+import { FooterComponent } from './components';
 
 
 
@@ -17,7 +18,8 @@ import { CountDownComponent } from './components';
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
-    CountDownComponent
+    CountDownComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { CountDownComponent } from './components';
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
-    CountDownComponent
+    CountDownComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
