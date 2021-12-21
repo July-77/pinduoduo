@@ -15,12 +15,12 @@ export interface TopMenu {
 })
 export class ScrollableTabComponent implements OnInit {
 
-  selectedIndex = -1;
+  @Input() selectedTabLink?: string;
   @Input() menus: TopMenu[] = [];
   @Input() backgroundColor = '#fff';
-  @Input() titleActiveColor = 'yellow';
-  @Input() titleColor = 'blue';
-  @Input() indicatorColor = 'brown';
+  @Input() titleActiveColor = 'red';
+  @Input() titleColor = '#000';
+  @Input() indicatorColor = 'red';
   @Output() tabSelected = new EventEmitter();
 
   constructor() {
@@ -33,8 +33,9 @@ export class ScrollableTabComponent implements OnInit {
 
 
   handleSelection(index:number) {
-    this.selectedIndex = index;
-    this.tabSelected.emit(this.menus[this.selectedIndex])
+
+    this.tabSelected.emit(this.menus[index]);
+
   }
 
 

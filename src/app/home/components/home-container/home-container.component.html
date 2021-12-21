@@ -1,11 +1,10 @@
 <app-scrollable-tab
-  [menus]="topMenus"
+  [menus]="topMenus$ | async"
   [backgroundColor]="scrollableTabBgColor"
-  [titleColor]="'#fff'"
-  tilteActiveColor="yellow"
-  indicatorColor="brown"
+  [titleColor]="'#000'"
+  [selectedTabLink]="selectedTabLink$ | async"
   (tabSelected)="handleTabSelected($event)"
-  *ngIf="scrollableTabBgColor === 'red'"
+  *ngIf="scrollableTabBgColor === '#fff'"
 >
 </app-scrollable-tab>
 <router-outlet></router-outlet>

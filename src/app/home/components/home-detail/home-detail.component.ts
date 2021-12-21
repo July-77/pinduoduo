@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {Channel, ImageSlider} from "../../../shared/components";
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {HomeService} from "../../services";
-import {filter, map} from "rxjs/operators";
-import { Observable, Subscription} from "rxjs";
+import {filter, map, switchMap} from "rxjs/operators";
+import { Observable } from "rxjs";
+import {Ad} from "../../../shared/domain";
+
 
 
 @Component({
@@ -11,39 +12,49 @@ import { Observable, Subscription} from "rxjs";
   templateUrl: './home-detail.component.html',
   styleUrls: ['./home-detail.component.css']
 })
-export class HomeDetailComponent implements OnInit {
+export class HomeDetailComponent implements OnInit , OnDestroy{
 
   constructor(private route: ActivatedRoute,
               private service: HomeService) { }
 
   selectedTabLink$?: Observable<string | null>;
 
-  imageSliders: ImageSlider[] = [];
+  imageSliders$?: Observable<any>;
 
-  channels: Channel[] = [];
+  channels$?: Observable<any>;
+
+  ad$?: Observable<Ad>;
 
   ngOnInit(): void {
 
     this.selectedTabLink$ = this.route.paramMap.pipe(
       filter(params => params.has('tabLink')),
-      map(params => params.get('tabLink'))
+      map(params => params.get('tabLink')
+      )
     );
-
-    console.log('this.selectedTabLink$===' , this.selectedTabLink$)
 
     this.route.queryParamMap.subscribe(params => {
       console.log('查询参数', params)
     });
 
-    this.service.getBanners().subscribe(banners =>{
-      this.imageSliders = banners;
-    });
+    this.imageSliders$ = this.service.getBanners();
 
-    this.service.getchannels().subscribe(channels =>{
-      this.channels = channels;
-    });
+    this.channels$ = this.service.getchannels();
 
+    this.ad$ = this.selectedTabLink$.pipe(
+      // @ts-ignore
+      switchMap(tab => this.service.getAdByTab(tab)),
+      // @ts-ignore
+      filter(ads => ads.length > 0),
+      // @ts-ignore
+      map(ads => ads[0])
+    )
+     ;
 
+  }
+
+  ngOnDestroy(): void {
+    // this.sub.unsubscribe();
   }
 
 }

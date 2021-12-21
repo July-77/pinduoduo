@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TopMenu } from "../../../shared/components";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {HomeService} from "../../services";
+import {Observable} from "rxjs";
+import {filter, map} from "rxjs/operators";
 
 @Component({
   selector: 'app-home-container',
@@ -10,17 +12,22 @@ import {HomeService} from "../../services";
 })
 export class HomeContainerComponent implements OnInit {
 
-  constructor(private router: Router, private service: HomeService) {
+  constructor(private router: Router, private service: HomeService, private route: ActivatedRoute) {
   }
-  scrollableTabBgColor = 'red';
+  scrollableTabBgColor = '#fff';
 
-  topMenus: TopMenu[] = [];
+  topMenus$?: Observable<any>;
 
   title: any;
+  selectedTabLink$?: Observable<any>;
 
   ngOnInit(): void {
-    this.service.getTabs().subscribe(tabs=>
-      this.topMenus = tabs)
+    this.topMenus$ = this.service.getTabs();
+    // @ts-ignore
+    this.selectedTabLink$ = this.route.firstChild.paramMap.pipe(
+      filter(params => params.has('tabLink')),
+      map(params => params.get('tabLink'))
+    )
   }
 
 

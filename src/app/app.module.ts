@@ -7,6 +7,10 @@ import {SharedModule} from "./shared/shared.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {HomeModule, NotificationInterceptor, ParamInterceptor} from "./home";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {RecommendModule} from "./recommend";
+import {MyModule} from "./my";
+import {CategoryModule} from "./category";
+import {ChatModule} from "./chat";
 
 
 @NgModule({
@@ -19,7 +23,12 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
     SharedModule,
     AppRoutingModule,
     HomeModule,
-    HttpClientModule
+    HttpClientModule,
+    RecommendModule,
+    MyModule,
+    CategoryModule,
+    ChatModule,
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
