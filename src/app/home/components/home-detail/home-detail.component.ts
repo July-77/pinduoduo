@@ -3,7 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {HomeService} from "../../services";
 import {filter, map, switchMap} from "rxjs/operators";
 import { Observable } from "rxjs";
-import {Ad} from "../../../shared/domain";
+import {Ad, Product} from "../../../shared/domain";
 
 
 
@@ -24,6 +24,8 @@ export class HomeDetailComponent implements OnInit , OnDestroy{
   channels$?: Observable<any>;
 
   ad$?: Observable<Ad>;
+  // @ts-ignore
+  products$: Observable<Product[]>
 
   ngOnInit(): void {
 
@@ -49,7 +51,12 @@ export class HomeDetailComponent implements OnInit , OnDestroy{
       // @ts-ignore
       map(ads => ads[0])
     )
-     ;
+
+    this.products$ = this.selectedTabLink$.pipe(
+      // @ts-ignore
+      switchMap(tab => this.service.getProductsByTab(tab))
+    )
+
 
   }
 

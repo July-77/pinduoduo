@@ -1,3 +1,10 @@
-<div class="grid-container" [ngStyle]="{'grid-template-rows' : templateRows, 'grid-templateColumns': templateColumns, 'geid-gap': gridGap}">
+<div
+  class="grid-container"
+  [ngStyle]="{
+    'grid-template-rows': templateRows,
+    'grid-template-columns': templateColumns,
+    'grid-gap': gridGap
+  }"
+>
   <ng-content></ng-content>
 </div>

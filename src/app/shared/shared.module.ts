@@ -8,6 +8,10 @@ import {GridItemTitleDirective} from "./directives";
 import { CountDownComponent } from './components';
 import { FooterComponent } from './components';
 import { VerticalGridComponent } from './components';
+import { ProductCardComponent } from './components';
+import { TagDirective } from './directives';
+import { AvatarDirective } from './directives/avatar.directive';
+import { ProductTileComponent } from './components/product-tile/product-tile.component';
 
 
 
@@ -21,7 +25,12 @@ import { VerticalGridComponent } from './components';
     GridItemTitleDirective,
     CountDownComponent,
     FooterComponent,
-    VerticalGridComponent
+    VerticalGridComponent,
+    ProductCardComponent,
+    TagDirective,
+    AvatarDirective,
+    ProductTileComponent,
+
   ],
   imports: [
     CommonModule,
@@ -39,7 +48,11 @@ import { VerticalGridComponent } from './components';
     GridItemTitleDirective,
     CountDownComponent,
     FooterComponent,
-    VerticalGridComponent
+    VerticalGridComponent,
+    ProductCardComponent,
+    TagDirective,
+    AvatarDirective,
+    ProductTileComponent
   ]
 })
 export class SharedModule { }

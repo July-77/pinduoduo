@@ -24,14 +24,19 @@ export interface ImageSlider {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
+
   @Input() sliders: ImageSlider[] = [];
   @Input() sliderHeight = '160px';
 // @ts-ignore
   @ViewChild('imageSlider', { static: true }) imgSlider: ElementRef;
   @Input() intervalBySeconds = 2;
   selectedIndex = 0;
-  constructor(private rd2: Renderer2) {}
+
   intervalId:any;
+
+  constructor(private rd2: Renderer2) {}
+
+
   ngOnInit() {}
 
   ngAfterViewInit(): void {
@@ -51,8 +56,7 @@ export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   getIndex(idx: number): number {
-    return idx >= 0
-      ? idx % this.sliders.length
+    return idx >= 0 ? idx % this.sliders.length
       : this.sliders.length - (Math.abs(idx) % this.sliders.length);
   }
 

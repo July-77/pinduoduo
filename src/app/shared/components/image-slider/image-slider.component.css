@@ -7,6 +7,7 @@
   display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  /*滚动动画效果*/
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
 }
@@ -14,6 +15,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /*图片显示完全*/
   scroll-snap-align: start;
 }
 .nav-section {
