@@ -11,6 +11,7 @@ import {RecommendModule} from "./recommend";
 import {MyModule} from "./my";
 import {CategoryModule} from "./category";
 import {ChatModule} from "./chat";
+import {ProductModule} from "./product";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {ChatModule} from "./chat";
     MyModule,
     CategoryModule,
     ChatModule,
+    ProductModule
 
   ],
   providers: [{

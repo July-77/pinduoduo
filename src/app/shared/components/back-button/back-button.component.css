@@ -1,0 +1,20 @@
+.back-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.back-button img {
+  width: 1.7rem;
+  height: 1.7rem;
+  object-fit: contain;
+}
+
+.float-effect {
+  background-color: #000;
+  opacity: 0.6;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 1rem;
+}

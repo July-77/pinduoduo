@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {OrderService} from "../../service";
+import {ActivatedRoute} from "@angular/router";
+import {Observable} from "rxjs";
+import {ProductVariant} from "../../domain";
 
 @Component({
   selector: 'app-product-container',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductContainerComponent implements OnInit {
 
-  constructor() { }
+  // @ts-ignore
+  variants$: Observable<ProductVariant[]>
+
+  constructor(private service: OrderService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    
   }
 
 }

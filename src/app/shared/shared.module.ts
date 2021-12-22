@@ -10,8 +10,9 @@ import { FooterComponent } from './components';
 import { VerticalGridComponent } from './components';
 import { ProductCardComponent } from './components';
 import { TagDirective } from './directives';
-import { AvatarDirective } from './directives/avatar.directive';
-import { ProductTileComponent } from './components/product-tile/product-tile.component';
+import { AvatarDirective } from './directives';
+import { ProductTileComponent } from './components';
+import { BackButtonComponent } from './components';
 
 
 
@@ -30,6 +31,7 @@ import { ProductTileComponent } from './components/product-tile/product-tile.com
     TagDirective,
     AvatarDirective,
     ProductTileComponent,
+    BackButtonComponent,
 
   ],
   imports: [
@@ -37,22 +39,23 @@ import { ProductTileComponent } from './components/product-tile/product-tile.com
     FormsModule,
 
   ],
-  exports: [
-    CommonModule,
-    FormsModule,
-    ScrollableTabComponent,
-    ImageSliderComponent,
-    HorizontalGridComponent,
-    GridItemDirective,
-    GridItemImageDirective,
-    GridItemTitleDirective,
-    CountDownComponent,
-    FooterComponent,
-    VerticalGridComponent,
-    ProductCardComponent,
-    TagDirective,
-    AvatarDirective,
-    ProductTileComponent
-  ]
+    exports: [
+        CommonModule,
+        FormsModule,
+        ScrollableTabComponent,
+        ImageSliderComponent,
+        HorizontalGridComponent,
+        GridItemDirective,
+        GridItemImageDirective,
+        GridItemTitleDirective,
+        CountDownComponent,
+        FooterComponent,
+        VerticalGridComponent,
+        ProductCardComponent,
+        TagDirective,
+        AvatarDirective,
+        ProductTileComponent,
+        BackButtonComponent
+    ]
 })
 export class SharedModule { }
