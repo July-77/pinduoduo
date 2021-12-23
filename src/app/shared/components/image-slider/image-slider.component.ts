@@ -25,7 +25,7 @@ export interface ImageSlider {
 })
 export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  @Input() sliders: ImageSlider[] = [];
+  @Input() sliders: any;
   @Input() sliderHeight = '160px';
 // @ts-ignore
   @ViewChild('imageSlider', { static: true }) imgSlider: ElementRef;
@@ -40,6 +40,10 @@ export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit() {}
 
   ngAfterViewInit(): void {
+
+    if (this.intervalBySeconds <= 0){
+      return;
+    }
     this.intervalId = setInterval(() => {
       this.rd2.setProperty(
         this.imgSlider.nativeElement,

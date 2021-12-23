@@ -10,6 +10,9 @@ export class TagDirective {
   @Input() @HostBinding('style.color') tagColor = '#ca516a'
   @Input() @HostBinding('style.font-size') tagSize = '0.8rem'
   @Input() @HostBinding('style.padding') tagpadding = '3px'
+  @Input() @HostBinding('style.border-radius') tagRadius = '0'
+  @Input() @HostBinding('style.margin') tagMargin = '0'
+
 
 
   constructor() { }
