@@ -4,7 +4,6 @@ import {ActivatedRoute} from "@angular/router";
 import {Observable} from "rxjs";
 import {ProductVariant} from "../../domain";
 import {filter, map, switchMap} from "rxjs/operators";
-import {LOCALE_ID} from "@angular/core";
 
 @Component({
   selector: 'app-product-container',
