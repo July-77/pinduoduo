@@ -14,9 +14,12 @@ import {ChatModule} from "./chat";
 import {ProductModule} from "./product";
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,

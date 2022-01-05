@@ -37,5 +37,32 @@
       <span>•</span>
       <span>假一赔十</span>
     </div>
+    <app-group-short-list class="group-short-list"></app-group-short-list>
   </div>
+
+
+  <div class="footBar">
+      <div class="icon-button">
+        <img alt="" src="assets/icons/more.png">
+        <div>更多</div>
+      </div>
+    <div class="icon-button">
+      <img alt="" src="assets/icons/favorite.png">
+      <div >收藏</div>
+    </div>
+    <div class="icon-button">
+      <img alt="" src="assets/icons/customer-service.png">
+      <div>客服</div>
+    </div>
+    <div class="direct-buy">
+      <div>{{productVariants[selectedIndex].listPrice | currency}}</div>
+      <div>直接购买</div>
+    </div>
+    <div class="group-buy">
+      <div>{{productVariants[selectedIndex].price | currency}}</div>
+      <div>发起拼单</div>
+    </div>
+  </div>
+
+
 </ng-container>

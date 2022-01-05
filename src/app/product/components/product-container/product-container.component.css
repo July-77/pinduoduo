@@ -3,9 +3,10 @@
   flex-direction: column;
   align-items: stretch;
   flex: 1;
-  height: 100%;
+
   overflow-y: hidden;
 }
+
 app-back-button {
   position: fixed;
   left: 1rem;
@@ -24,7 +25,8 @@ app-back-button {
 
 .title,
 .coupon,
-.guarantee {
+.guarantee ,
+.group-short-list{
   grid-column: 1/4;
 }
 
@@ -43,20 +45,65 @@ app-back-button {
   justify-self: end;
 }
 
-
 .price-section .title {
   font-weight: bold;
   font-size: 1.2rem;
   margin: 3px 0;
 }
+
 .price-section .coupon {
   font-weight: bold;
   font-size: 1.2rem;
   margin: 3px 3px;
 }
+
 .price-section .guarantee {
   font-weight: bold;
   font-size: 1.1rem;
   margin: 3px 0;
   color: darkgray;
+}
+
+.group-short-list {
+  width: 100%;
+  padding: 0.4rem 0;
+  background-color: #f5f5f5;
+}
+
+.footBar {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.icon-button {
+  font-size: 0.8rem;
+  color: #3f3f3f;
+  flex: 1 1 10%;
+}
+
+.icon-button img{
+  width: 2rem;
+  height: 2rem;
+}
+
+.footBar div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.direct-buy {
+  color: #fff;
+  background-color: #e9aeaa;
+  flex: 1 1 28%;
+
+}
+
+.group-buy {
+  color: #fff;
+  background-color: #e02f29;
+  flex: 1 1 35%;
+
 }

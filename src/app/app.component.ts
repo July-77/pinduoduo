@@ -41,5 +41,8 @@ export class AppComponent implements OnInit{
       tab === 'my'? 4 : 0 ;
   }
 
+  removeDialog() {
+
+  }
 
 }
